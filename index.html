@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Surat Cinta 💕By Dilxz😎</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+/* teks utama */
+.container {
+  position: relative;
+  top: 30%;
+}
+
+h1 {
+  font-size: 40px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 30px pink; }
+}
+
+/* tombol */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: white;
+  color: #ff4d88;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: pink;
+  color: white;
+}
+
+/* hati jatuh */
+.heart {
+  position: absolute;
+  color: red;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(110vh); }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1 id="judul"></h1>
+  <p id="teks"></p>
+  <button onclick="alert('Aku juga sayang kamu 😘 Dilxz🥰')">Klik Aku 💌</button>
+</div>
+
+<script>
+// efek ketik
+const judulText = "Untuk Kamu Yang Paling Berarti 💕";
+
+const isiText = "Aku cuma mau bilang sesuatu yang mungkin sederhana, tapi datang dari hati yang paling dalam. 😊 "
++ "Sejak aku kenal kamu, hidupku jadi terasa beda… lebih berwarna, lebih hangat, dan lebih berarti. "
++ "Kamu itu bukan cuma seseorang yang aku sayang, tapi juga seseorang yang selalu bikin aku kuat setiap hari. ❤️ "
++ "Kadang aku nggak pandai ngomong langsung, tapi percayalah… di setiap diamku, ada banyak rasa yang aku simpan buat kamu. "
++ "Aku suka caramu ketawa, caramu ngomong, bahkan hal-hal kecil tentang kamu yang mungkin orang lain nggak sadar. 🥰 "
++ "Buat aku, kamu itu spesial banget, lebih dari yang bisa aku jelasin dengan kata-kata. "
++ "Aku mungkin bukan orang yang sempurna, tapi aku selalu berusaha jadi yang terbaik buat kamu. "
++ "Aku mau ada di samping kamu, dalam keadaan apapun… senang, sedih, susah, ataupun bahagia. "
++ "Terima kasih ya, sudah hadir di hidupku, sudah mau bertahan sejauh ini, dan sudah jadi alasan aku tersenyum setiap hari. 💖 "
++ "Aku harap kita bisa terus bareng, jalan bareng, dan ngelewatin semuanya sama-sama. "
++ "Karena buat aku… kamu bukan cuma seseorang yang aku cintai, tapi kamu adalah rumah. 🏡❤️ "
++ "I love you, selalu dan selamanya. 💕✨";
+
+let i = 0;
+let j = 0;
+
+function ketikJudul() {
+  if (i < judulText.length) {
+    document.getElementById("judul").innerHTML += judulText.charAt(i);
+    i++;
+    setTimeout(ketikJudul, 100);
+  } else {
+    ketikIsi();
+  }
+}
+
+function ketikIsi() {
+  if (j < isiText.length) {
+    document.getElementById("teks").innerHTML += isiText.charAt(j);
+    j++;
+    setTimeout(ketikIsi, 50);
+  }
+}
+
+ketikJudul();
+
+// bikin hati jatuh
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
